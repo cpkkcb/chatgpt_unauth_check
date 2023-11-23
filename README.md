@@ -1,0 +1,2 @@
+# chatgpt_unauth_check
+检测使用开源组件搭建的chatgpt服务是否存在未授权访问的情况

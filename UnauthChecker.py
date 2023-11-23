@@ -51,7 +51,7 @@ class UnauthChecker:
                             f.write(url + "\n")
                         print(f"{url} 该链接存在未授权访问情况，请及时修复！！")
                     else:
-                        print(f"{url} 该链接访问超时")
+                        print(f"{url} 该链接访问超时或出错")
         except Exception as e:
             print(e)
 

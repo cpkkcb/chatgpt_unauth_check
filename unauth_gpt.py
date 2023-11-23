@@ -19,20 +19,18 @@ def check():
                 res = requests.post(burp0_url, headers=burp0_headers, timeout=8)
                 # print(res.text)
                 if "auth\":true" in res.text:
-                    print(url + ' ' + '该链接需要认证')
+                    print(url + ' ' + '该链接不存在未授权访问情况')
                 else:
                     if "auth\":false" in res.text:
-                        # print(url + '该链接不需要认证')
                         burp0_json = {"options": {}, "prompt": "1"}
                         res_new = requests.post(url + "/api/chat-process", headers=burp0_headers, json=burp0_json,
                                                 timeout=8)
                         # print(resNew.text)
                         if 'role' in res_new.text:                            # print(res.text)
                             f = open("result.txt", 'a', encoding='utf-8')
-                            # f.write(url + ' ' + '延时: ' + str(delay) + ' ms' + '\n')
                             f.write(url)
                             f.close()
-                            print(url + ' ' + '该链接存在未授权访问，请及时修复')
+                            print(url + ' ' + '该链接存在未授权访问情况，请及时修复！！')
                         else:
                             print(url + ' ' + '该链接无法直接访问')
             except Exception as e:

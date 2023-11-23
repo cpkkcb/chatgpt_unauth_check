@@ -3,10 +3,12 @@
 
 使用方法：<br>
 1.将带有协议待检测地址放入url.txt<br>
-![image](https://github.com/cpkkcb/chatgpt_unauth_check/assets/31617622/f78e5915-569f-4a62-b527-9e22d727739c)<br>
+![image](https://github.com/cpkkcb/chatgpt_unauth_check/assets/31617622/876666cb-26be-4dc4-a52a-8a96d6e49b3c)
+<br>
 
 2.安装必要的库后运行脚本得出结果 python UnauthChecker.py  <br>
-![image](https://github.com/cpkkcb/chatgpt_unauth_check/assets/31617622/49369ec2-a9f6-4af2-9ace-ac128cb7a25d)
+![image](https://github.com/cpkkcb/chatgpt_unauth_check/assets/31617622/b698bf50-470c-46bd-84e6-1bbbb583606d)
+
 
 
 

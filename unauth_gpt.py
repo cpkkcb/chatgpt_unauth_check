@@ -32,11 +32,11 @@ def check():
                             # f.write(url + ' ' + '延时: ' + str(delay) + ' ms' + '\n')
                             f.write(url)
                             f.close()
-                            print(url + ' ' + '该链接可正常使用!!!')
+                            print(url + ' ' + '该链接存在未授权访问，请及时修复')
                         else:
                             print(url + ' ' + '该链接无法直接访问')
             except Exception as e:
-                print(e)
+                print("访问出错")
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 # -*- coding = utf-8 -*-
 # @Time : 2023/11/14
 # @Author : cdbc
-# @File :unauth_gpt.py
+# @File :UnauthChecker.py
 
 import requests
 from multiprocessing import Pool

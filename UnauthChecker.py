@@ -25,8 +25,8 @@ class UnauthChecker:
         if url in self._cache:
             return False
 
-        burp0_url = f"{url}/api/session"
-        burp0_headers = {
+        url = f"{url}/api/session"
+        headers = {
             "Accept": "application/json, text/plain, */*",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                           "(KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36",
@@ -36,7 +36,7 @@ class UnauthChecker:
             "Connection": "close"
         }
         try:
-            res = requests.post(burp0_url, headers=burp0_headers, timeout=10)
+            res = requests.post(url, headers=headers, timeout=10)
             self._cache.add(url)
             if "auth\":true" in res.text:
                 print(f"{url} 该链接不存在未授权访问情况")
@@ -44,7 +44,7 @@ class UnauthChecker:
                 if "auth\":false" in res.text:
                     burp0_json = {"options": {}, "prompt": "1"}
                     res_new = requests.post(
-                        f"{url}/api/chat-process", headers=burp0_headers, json=burp0_json, timeout=8)
+                        f"{url}/api/chat-process", headers=headers, json=burp0_json, timeout=8)
                     if 'role' in res_new.text:
                         with open(self._result_file, "a", encoding="utf-8") as f:
                             f.write(url + '\n')

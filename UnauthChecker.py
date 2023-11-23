@@ -14,7 +14,7 @@ class UnauthChecker:
     def __init__(self, url_file: str, result_file: str):
         self._url_file = url_file
         self._result_file = result_file
-        self._cache = set() # 缓存检测是否重复访问
+        self._cache = set() 
 
     def _fetch_url(self, url: str) -> bool:
         """
@@ -22,6 +22,7 @@ class UnauthChecker:
         """
         # 去除末尾斜杠
         url = url.rstrip('/')
+        # 缓存检测是否重复访问
         if url in self._cache:
             return False
 
